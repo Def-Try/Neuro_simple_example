@@ -1,6 +1,4 @@
-import json
-json_file_path='111.json'
-str1 = """[
+﻿[
     {
         "sepal_length": "5.1",
         "sepal_width": "3.5",
@@ -1051,8 +1049,4 @@ str1 = """[
         "petal_width": "1.8",
         "species": "virginica"
     }
-]"""
-dta = json.loads(str1)
-#print(dta)
-for i in dta:
-    print(i)
+]
