@@ -74,7 +74,7 @@ class OurNeuralNetwork:
                 d_ypred_d_w6 = neuro_2_result * deriv_sigmoid(neuro_3_sum) # изменение для веса 2 нейрона о1
                 d_ypred_d_b3 = deriv_sigmoid(neuro_3_sum)      # изменение для смещения нейрона о1
 
-                d_ypred_d_h1 = self.w5 * deriv_sigmoid(neuro_3_sum  # опускаемся в глубь к нейрону 1
+                d_ypred_d_h1 = self.w5 * deriv_sigmoid(neuro_3_sum)  # опускаемся в глубь к нейрону 1
                 d_ypred_d_h2 = self.w6 * deriv_sigmoid(neuro_3_sum) # опускаемся в глубь к нейрону 2
 
                 # Нейрон h1

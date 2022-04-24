@@ -1,5 +1,7 @@
 import json
-json_file_path='111.json'
+
+import numpy as np
+
 str1 = """[
     {
         "sepal_length": "5.1",
@@ -1053,6 +1055,28 @@ str1 = """[
     }
 ]"""
 dta = json.loads(str1)
-#print(dta)
+
+
+list_input = []
+list_true = []
 for i in dta:
-    print(i)
+    small_list = []
+    small_list.append(i['sepal_length'])
+    small_list.append(i['sepal_width'])
+    small_list.append(i['petal_length'])
+
+    list_input.append(small_list)
+    if (i['species'] == 'virginica'):
+        list_true.append(1)
+    elif (i['species'] == 'setosa'):
+        list_true.append(0)
+    else:
+        list_true.append(-1) #versicolor
+
+
+
+data1 = np.array(list_input)
+
+all_y_trues = np.array(list_true)
+
+
