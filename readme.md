@@ -1,18 +1,61 @@
 # Примеры нейронных сетей
 ## Описание 
-## Просто нейрон - simple_neuron.py
-## Простая нейроесть без оучения - simple_neural_network.py
-## Нейросеть с обучением - real_nn_male_or_female.py
+- Просто нейрон - simple_neuron.py
+- Простая нейроесть без оучения - simple_neural_network.py
+- Нейросеть с обучением - real_nn_male_or_female.py
 
 ## Доп материал по NumPy
-### exp — функция экспоненты
-### array — метод создания матриц
-### dot — метод перемножения матриц
-### random — метод, подающий на выход случайное число
-### NumPy https://habr.com/ru/post/352678/
+`numpy.exp(x: array_like, /, out: Optional[array_like] = None) -> result: Optional[array_like]` — посчитать экспоненту всех элементов в массиве
+
+Принимает на вход:
+- `x: array_like` - обязательно - массив, для элементов которого нужно посчитать экспоненту
+- `out: array_like` - необязательно - массив, куда сохранить результат. если не указано или `None`, то новый массив с результатами возвращается функцией.
+  
+Возвращает:
+- `result: array_like` - необязательно - массив с результатом, если `out` не указано
+  
+---
+
+`numpy.array(object: array_like, /, dtype: data_type = None) -> result: ndarray` — инициализировать ndarray (массив, но круче)
+
+Принимает на вход:
+- `object: array_like` - обязательно - массив, данные которого будут добавлены в создаваемый ndarray
+- `dtype: data_type` - необязательно - тип данных массива. если не указано. numpy попробует угадать тип данных который нужно использовать для массива
+  
+Возвращает:
+- `result: ndarray` - обязательно - инициализированный массив с данными
+
+---
+
+`numpy.dot(a: array_like, b: array_like, /, out: Optional[array_like] = None) -> result: Optional[array_like]` - дот-продукт двух массивов. А именно:
+- Если и a, и b являются одномерными массивами, то скалярное произведение векторов (без комплексного сопряжения).
+- Если и a, и b являются двумерными массивами, то умножение матриц, но предпочтительнее использовать matmul или a @ b.
+- Если a или b имеет значение 0–D (скаляр), то эквивалентно умножению, и использование numpy.multiply(a, b) или a * b предпочтительнее.
+- Если a — массив N-D, а b — одномерный массив, это произведение суммы по последней оси a и b.
+- Если a — массив N-D, а b — массив M-D (где M>=2), это произведение суммы по последней оси a и предпоследней оси b:<br>
+    `dot(a, b)[i,j,k,m] = sum(a[i,j,:] * b[k,:,m])`
+
+Принимает на вход:
+- `a: array_like` - обязательно - первый массив
+- `b: array_like` - обязательно - второй массив
+- `out: array_like` - необязательно - массив, куда сохранить результат. если не указано или `None`, то новый массив с результатами возвращается функцией.
+
+Возвращает:
+- `result: array_like` - необязательно - массив с результатом, если `out` не указано
+
+---
+
+`numpy.random.random(size: int = None)` - сгенерировать случайное число или массив с числами от 0.0 до 1.0
+
+Принимает на вход:
+- `size: array_like = None` - необязательно - размер массива, или None для одного числа
+
+Возвращает:
+- `result: array_like` - обязательно - массив или число
 
 ## Доп материал ссылки 
-### Нейросеть шаг за шагом https://blog.skillfactory.ru/kak-postroit-svoyu-pervuyu-nejronnuyu-set-napisav-9-strochek-na-python/
-### Пример нейросети в 11 строчек https://habr.com/ru/post/271563/
-### Пример нейросети в 7 строчек https://neurohive.io/ru/tutorial/prostaja-nejronnaja-set-python/
-### Инфа про zip http://pythonicway.com/python-functinal-programming
+- [Нейросеть шаг за шагом](https://blog.skillfactory.ru/kak-postroit-svoyu-pervuyu-nejronnuyu-set-napisav-9-strochek-na-python/)
+- [Пример нейросети в 11 строчек](https://habr.com/ru/post/271563/)
+- [Пример нейросети в 7 строчек](https://neurohive.io/ru/tutorial/prostaja-nejronnaja-set-python/)
+- [Инфа про zip](http://pythonicway.com/python-functinal-programming)
+- [О NumPy](https://habr.com/ru/post/352678/)
